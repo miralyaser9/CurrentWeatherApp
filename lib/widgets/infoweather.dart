@@ -46,7 +46,7 @@ class Infoweather extends StatelessWidget {
           children: [
 
           Text("Max Temp is ${weatherModel.maxTemp.round()}".toString(),style: const TextStyle(fontSize: 17,fontWeight: FontWeight.bold),)
-          ,Text("Max Temp is ${weatherModel.maxTemp.round()}",style: const TextStyle(fontSize: 16,fontWeight: FontWeight.bold),)
+          ,Text("Min Temp is ${weatherModel.minTemp.round()}",style: const TextStyle(fontSize: 16,fontWeight: FontWeight.bold),)
         ],)
 
       ],
