@@ -1,10 +1,11 @@
-import 'dart:developer';
+
 
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:weatherapp/cubits/get_weather_cubit/get_weather_cubit.dart';
+
+import 'package:weatherapp/cubitss/weather_cubit.dart';
 import 'package:weatherapp/models/weather_model.dart';
 import 'package:weatherapp/services/weather_services.dart';
 
@@ -14,11 +15,15 @@ class SearchPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text("Search a City",style:
-    TextStyle(fontSize: 25,fontFamily: "Asteru Display"),),centerTitle: true,
-      backgroundColor: Colors.blue,)
+    TextStyle(fontSize: 25,fontFamily: "Asteru Display"),
+      )
+        ,centerTitle: true,
+      backgroundColor: Colors.blue,
+      )
       ,body:
       Container(decoration: const BoxDecoration(gradient: LinearGradient(colors: [Colors.white,Colors.lightBlueAccent]
-      ,begin: Alignment.bottomLeft,end: Alignment.topRight)
+      ,begin: Alignment.bottomLeft,end: Alignment.topRight
+      )
       ),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -27,9 +32,9 @@ class SearchPage extends StatelessWidget {
 
               onSubmitted: (value) async {
 
-              var getWeathercubit=  BlocProvider.of<GetweatherCubit>(context);
-              getWeathercubit.fetchWeather(cityName: value);
-                Navigator.pop(context);
+                 BlocProvider.of<WeatherCubit>(context).getWeather(cityName: value);
+                 BlocProvider.of<WeatherCubit>(context).cityNamee=value;
+                 Navigator.pop(context);
               },
 
             decoration: InputDecoration

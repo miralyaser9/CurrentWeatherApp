@@ -19,18 +19,18 @@ class Splash extends StatelessWidget {
       ,body:
     AnimatedSplashScreen(
         backgroundColor: Colors.white,
-        animationDuration: Duration(seconds: 11),
+        animationDuration: const Duration(seconds: 11),
         splashTransition: SplashTransition.slideTransition,splashIconSize: 200
         ,splash: Center(
           child: Expanded(
             child: Column(mainAxisAlignment: MainAxisAlignment.start,
       children: [
-      Text("welcome",style: TextStyle(fontSize: 50,
+      const Text("welcome",style: TextStyle(fontSize: 50,
 
               fontWeight: FontWeight.bold,fontFamily: "Trash Talk",color: Colors.blue),
       ), ClipRRect(
             borderRadius: BorderRadius.circular(200)
-            ,child:Image(width: 100,height: 120,image:
+            ,child:const Image(width: 100,height: 120,image:
         NetworkImage("https://media.giphy.com/media/xT9DPKLOa0J849owzS/giphy.gif"),),
         ),
 
