@@ -15,10 +15,6 @@ class Infoweather extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-    //WeatherModel weatherModel=BlocProvider.of<GetweatherCubit>(context).weatherModel!;
-
-
     return Container(decoration: BoxDecoration(gradient: LinearGradient(colors: [
       getWeatherColor(weather.weatherCondition),
       getWeatherColor(weather.weatherCondition)[300]!,

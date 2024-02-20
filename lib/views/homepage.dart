@@ -34,17 +34,17 @@ class HomePage extends StatelessWidget {
          builder: (context,state){
 
          if(state is WeatherLoading){
-           return Center(child: CircularProgressIndicator());
+           return const Center(child: CircularProgressIndicator());
          }
          else if(state is WeatherSuccess){
          weatherData=  BlocProvider.of<WeatherCubit>(context).weatherModel;
            return  Infoweather(weather: weatherData!,);
          }
          else if(state is WeatherFailure){
-           return const Text("oops, there was an error");
+           return const Center(child: Text("oops, there was an error"));
          }
          else{
-           return No_weather();
+           return const No_weather();
 
            }
        },)
